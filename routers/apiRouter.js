@@ -28,6 +28,12 @@ router.post(
     }
   );
 
+  router.get('/secret', (req, res) => {
+    if (req.session.name === 'sandy') res.status(200).json('cat')
+    else res.status(401).json('forbidden')
+    console.log(req.session.sandy)
+  })
+
 module.exports = router;
 
 

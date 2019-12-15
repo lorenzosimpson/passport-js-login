@@ -13,15 +13,15 @@ const store = new KnexSessionStore({
 });
 
 const sessionConfig = {
-  name: "sandy cat",
+  name: "sandy",
   secret: process.env.SESSION_SECRET,
   resave: false,
   key: "Bonafind",
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     maxAge: 1 * 24 * 60 * 60 * 1000,
     secure: false, 
-    httpOnly: true
+    httpOnly: false
   },
   store: store
 };
